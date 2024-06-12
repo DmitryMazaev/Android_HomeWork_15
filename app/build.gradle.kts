@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.homework_15db"
+    namespace = "com.example.android_homework_15"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.homework_15db"
+        applicationId = "com.example.android_homework_15"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
