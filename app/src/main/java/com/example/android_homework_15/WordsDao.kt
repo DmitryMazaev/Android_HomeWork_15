@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface WordsDao {
-    @Query("SELECT * FROM words")
+    @Query("SELECT * FROM Words")
     fun getAllWords(): Flow<List<Word>>
 
     @Insert(entity = Word::class)

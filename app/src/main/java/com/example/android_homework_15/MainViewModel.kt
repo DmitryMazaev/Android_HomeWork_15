@@ -9,11 +9,12 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val wordsDao: WordsDao): ViewModel() {
     val allWords: Flow<List<Word>> = this.wordsDao.getAllWords()
 
-    fun addWord(string: String) {
+    fun addWord(string: String, count: Int) {
         viewModelScope.launch {
             wordsDao.insertWord(
                 NewWord(
-                    oneWord = string
+                    oneWord = string,
+                    count = count
                 )
             )
         }

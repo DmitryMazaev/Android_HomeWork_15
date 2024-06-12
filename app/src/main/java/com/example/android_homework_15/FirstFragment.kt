@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.ui.window.application
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.android_homework_15.databinding.FragmentFirstBinding
+import com.example.homework_15db.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -29,7 +28,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonAdd.setOnClickListener {
-            viewModel.addWord(binding.editText.text.toString())
+            viewModel.addWord(binding.editText.text.toString(), 0)
             binding.words.text = viewModel.allWords.toString()
         }
     }

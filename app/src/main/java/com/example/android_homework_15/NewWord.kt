@@ -9,5 +9,7 @@ data class NewWord(
     @ColumnInfo(name = "id")
     val id: Int? = null,
     @ColumnInfo(name = "word")
-    val oneWord: String
+    val oneWord: String,
+    @ColumnInfo(name = "count")
+    val count: Int
 )
