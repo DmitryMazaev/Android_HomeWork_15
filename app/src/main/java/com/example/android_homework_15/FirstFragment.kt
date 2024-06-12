@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.example.android_homework_15.databinding.FragmentFirstBinding
 import kotlinx.coroutines.launch
@@ -43,7 +44,8 @@ class FirstFragment : Fragment() {
             .launch {
                 binding.buttonAdd.setOnClickListener {
                     viewModel.addWord(binding.editText.text.toString(), 0)
-                    binding.words.text = viewModel.allWords.toString()
+
+                    //binding.words.text = viewModel.allWords.toString()
                 }
         }.start()
         /*binding.buttonAdd.setOnClickListener {

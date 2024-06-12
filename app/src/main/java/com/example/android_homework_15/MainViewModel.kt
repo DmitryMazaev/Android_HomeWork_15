@@ -20,4 +20,5 @@ class MainViewModel(private val wordsDao: WordsDao): ViewModel() {
             )
         }
     }
+
 }
