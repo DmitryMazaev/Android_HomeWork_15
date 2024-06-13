@@ -24,6 +24,7 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+    private var countWord: Int = 0
 
     private val viewModel: MainViewModel by viewModels {
         object: ViewModelProvider.Factory {
@@ -48,8 +49,9 @@ class FirstFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope
             .launch {
                 binding.buttonAdd.setOnClickListener {
+                    countWord +=1
                     viewModel.addWord(binding.editText.text.toString(), 0)
-                    recyclerView.adapter = CustomRecyclerAdapter(fillList())
+                    recyclerView.adapter = CustomRecyclerAdapter(fillList(countWord, binding.editText.text.toString(), 0))
                     //binding.words.text = viewModel.allWords.toString()
                 }
         }.start()
@@ -64,14 +66,11 @@ class FirstFragment : Fragment() {
         _binding = null
     }
 
-    private fun fillList(): List<Word> {
+    private fun fillList(id:Int, str: String, count: Int): List<Word> {
         val data = mutableListOf<Word>()
-        (0..30).forEach { i -> data.add("$i element") }
+        (0..30).forEach { i -> data.add(Word(id, str, count)) }
         return data
     }
 }
 
-private fun <E> MutableList<E>.add(element: String) {
-
-}
 

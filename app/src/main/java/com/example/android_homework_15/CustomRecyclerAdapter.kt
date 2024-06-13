@@ -25,6 +25,6 @@ class CustomRecyclerAdapter(private val names: List<Word>):
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.largeTextView.text = names[0].toString()
+        holder.largeTextView.text = names[position].toString()
     }
 }
